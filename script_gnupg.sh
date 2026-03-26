@@ -47,5 +47,5 @@ gpg --clearsign doc_no_cifrado.txt
 # Result: creates a signed file called doc_no_cifrado.txt.asc
 
 # Sign the file in binary format
-gpg --sign doc_no_cifrado.txt
+gpg --sign doc_no_cifrado.txt.gpg
 # Result: creates a binary signed file doc_no_cifrado.txt.gpg
