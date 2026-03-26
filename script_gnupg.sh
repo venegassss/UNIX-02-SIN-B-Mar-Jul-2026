@@ -70,7 +70,10 @@ gpg --verify doc_no_cifrado_detacha.txt.gpg.sig
 gpg --edit-key israelfarfan99@gmail.com
 # Result: opens the GPG interactive interface where you can modify key settings
 
-
 # Sign your partner's public key to certify it
 gpg --sign-key israelfarfan99@gmail.com
 # Result: adds your signature to your partner's public key
+
+# Verify a signed file again after trusting the key
+gpg --verify doc_no_cifrado_clearsign.txt.gpg.asc
+# Result: the warning about an untrusted key may disappear
