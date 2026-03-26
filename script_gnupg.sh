@@ -41,3 +41,7 @@ gpg --encrypt --recipient israelfarfan99@gmail.com doc_no_cifrado.txt
 # Decrypt an encrypted file using your private key
 gpg --decrypt doc_cifradoif.txt
 # Result: decrypts the file and prints the original message to the terminal
+
+# Sign the file in clear text format (content remains readable)
+gpg --clearsign doc_no_cifrado.txt
+# Result: creates a signed file called doc_no_cifrado.txt.asc
