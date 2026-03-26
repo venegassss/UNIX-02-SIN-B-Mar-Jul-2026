@@ -17,3 +17,7 @@ gpg --list-keys
 # List all secret (private) keys with long key IDs
 gpg --list-secret-keys --keyid-format=long
 # Result: shows private keys along with their long identification numbers
+
+# Export your public key in ASCII armored format for sharing
+gpg --armor --export cristopheribujes@gmail.com
+# Result: prints the public key in readable text format
