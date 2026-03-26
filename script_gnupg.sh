@@ -45,3 +45,7 @@ gpg --decrypt doc_cifradoif.txt
 # Sign the file in clear text format (content remains readable)
 gpg --clearsign doc_no_cifrado.txt
 # Result: creates a signed file called doc_no_cifrado.txt.asc
+
+# Sign the file in binary format
+gpg --sign doc_no_cifrado.txt
+# Result: creates a binary signed file doc_no_cifrado.txt.gpg
