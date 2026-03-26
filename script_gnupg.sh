@@ -46,6 +46,22 @@ gpg --decrypt doc_cifradoif.txt
 gpg --clearsign doc_no_cifrado.txt
 # Result: creates a signed file called doc_no_cifrado.txt.asc
 
+# Create a detached signature file
+gpg --detach-sign doc_no_cifrado.txt
+# Result: generates a separate signature file doc_no_cifrado.txt.sig
+
 # Sign the file in binary format
 gpg --sign doc_no_cifrado.txt.gpg
 # Result: creates a binary signed file doc_no_cifrado.txt.gpg
+
+# Verify a signed file
+gpg --verify doc_no_cifradoif.txt.gpg
+# Result: verifies the signature and shows if it is valid
+
+# Verify a signed file
+gpg --verify doc_no_cifrado_clearsign.txt.gpg.asc
+# Result: verifies the signature and shows if it is valid
+
+# Verify a signed file
+gpg --verify doc_no_cifrado_detacha.txt.gpg.sig
+# Result: verifies the signature and shows if it is valid
