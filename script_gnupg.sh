@@ -29,3 +29,7 @@ gpg --import partner_public_key.asc
 # Verify that the key was imported successfully
 gpg --list-keys
 # Result: shows the list of keys including the imported partner key
+
+# Create a plaintext file containing a secret message
+echo "este mensaje esta cifrado por V3N3G4S" > doc_no_cifrado.txt
+# Result: creates the file doc_no_cifrado.txt with the message inside
