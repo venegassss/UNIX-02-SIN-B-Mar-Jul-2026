@@ -69,3 +69,8 @@ gpg --verify doc_no_cifrado_detacha.txt.gpg.sig
 # Open the interactive menu to edit and manage a specific key
 gpg --edit-key israelfarfan99@gmail.com
 # Result: opens the GPG interactive interface where you can modify key settings
+
+
+# Sign your partner's public key to certify it
+gpg --sign-key israelfarfan99@gmail.com
+# Result: adds your signature to your partner's public key
