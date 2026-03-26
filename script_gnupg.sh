@@ -9,3 +9,11 @@ gpg --version
 # Generate a new GPG key pair (public and private key)
 gpg --full-generate-key
 # Result: creates a new key pair and stores it in the local GPG keyring
+
+# List all public keys stored in the keyring
+gpg --list-keys
+# Result: displays all public keys available in your system
+
+# List all secret (private) keys with long key IDs
+gpg --list-secret-keys --keyid-format=long
+# Result: shows private keys along with their long identification numbers
