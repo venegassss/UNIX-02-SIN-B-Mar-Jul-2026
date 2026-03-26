@@ -77,3 +77,8 @@ gpg --sign-key israelfarfan99@gmail.com
 # Verify a signed file again after trusting the key
 gpg --verify doc_no_cifrado_clearsign.txt.gpg.asc
 # Result: the warning about an untrusted key may disappear
+
+# Encrypt and sign a file in a single command
+gpg --encrypt --sign --recipient israelfarfan99@gmail.com doc_no_cifrado.txt
+# Result: creates an encrypted and digitally signed file
+
