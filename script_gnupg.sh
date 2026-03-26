@@ -65,3 +65,7 @@ gpg --verify doc_no_cifrado_clearsign.txt.gpg.asc
 # Verify a signed file
 gpg --verify doc_no_cifrado_detacha.txt.gpg.sig
 # Result: verifies the signature and shows if it is valid
+
+# Open the interactive menu to edit and manage a specific key
+gpg --edit-key israelfarfan99@gmail.com
+# Result: opens the GPG interactive interface where you can modify key settings
