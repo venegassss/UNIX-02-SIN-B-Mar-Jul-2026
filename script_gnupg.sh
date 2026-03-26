@@ -82,3 +82,6 @@ gpg --verify doc_no_cifrado_clearsign.txt.gpg.asc
 gpg --encrypt --sign --recipient israelfarfan99@gmail.com doc_no_cifrado.txt
 # Result: creates an encrypted and digitally signed file
 
+# Decrypt the file and automatically verify the signature
+gpg --decrypt doc_cifrado_finalif.txt.gpg
+# Result: decrypts the file and shows whether the signature is valid
