@@ -37,3 +37,7 @@ echo "este mensaje esta cifrado por V3N3G4S" > doc_no_cifrado.txt
 # Encrypt the file using your partner's public key
 gpg --encrypt --recipient israelfarfan99@gmail.com doc_no_cifrado.txt
 # Result: creates an encrypted file called doc_no_cifrado.txt.gpg
+
+# Decrypt an encrypted file using your private key
+gpg --decrypt doc_cifradoif.txt
+# Result: decrypts the file and prints the original message to the terminal
