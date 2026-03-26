@@ -25,3 +25,7 @@ gpg --armor --export cristopheribujes@gmail.com
 # Import your partner's public key into your keyring
 gpg --import partner_public_key.asc
 # Result: adds the partner's public key to your local keyring
+
+# Verify that the key was imported successfully
+gpg --list-keys
+# Result: shows the list of keys including the imported partner key
