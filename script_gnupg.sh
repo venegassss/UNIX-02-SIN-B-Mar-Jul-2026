@@ -21,3 +21,7 @@ gpg --list-secret-keys --keyid-format=long
 # Export your public key in ASCII armored format for sharing
 gpg --armor --export cristopheribujes@gmail.com
 # Result: prints the public key in readable text format
+
+# Import your partner's public key into your keyring
+gpg --import partner_public_key.asc
+# Result: adds the partner's public key to your local keyring
