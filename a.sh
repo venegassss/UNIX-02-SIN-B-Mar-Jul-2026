@@ -16,3 +16,7 @@ sudo parted -l && echo -e "\n---\n" && lsblk -f && echo -e
 //Check if the system is booted in UEFI mode or BIOS mode.
 //If the /sys/firmware/efi directory exists, it prints "UEFI"; otherwise, it prints "BIOS".
 [ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
+
+//creates a file with that text, and stat archivo.txt shows its metadata (size, permissions, timestamps, inode, etc.).
+echo "esto es un archivo" > archivo.txt
+stat archivo.txt
