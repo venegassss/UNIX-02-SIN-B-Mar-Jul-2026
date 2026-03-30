@@ -12,3 +12,7 @@ sudo apt install parted
 
 //Displays partition information (parted), then separates with "--", and afterwards lists the disks with their file systems (lsblk -f)
 sudo parted -l && echo -e "\n---\n" && lsblk -f && echo -e
+
+//Check if the system is booted in UEFI mode or BIOS mode.
+//If the /sys/firmware/efi directory exists, it prints "UEFI"; otherwise, it prints "BIOS".
+[ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
