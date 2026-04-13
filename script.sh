@@ -50,3 +50,14 @@ man git-clone
 #Open the git clone manual page (if it exists on your system) to view its documentation.
 /depth
 #Search for the word "depth" in the git clone manual and it will take you to the first match.
+
+chmod +x script.sh
+#Adds execute permission to everyone (user, group, and others) in script.sh.
+chmod u+x script.sh
+#Adds execution permission only to the file owner (u = user).
+chmod o-r secreto.txt
+#Remove read permission from other users (o = others) in secret.txt.
+chmod u+rw,go-rwx privado
+#It does two things:
+    #u+rw → the owner can read and write
+    #go-rwx → the group and others have no permissions (no read, no write, no execute)
