@@ -4,19 +4,49 @@ ls
 # Arguments: 
 -a  
 #Show all files, including hidden ones.
---all  
+
+--all
 #It does exactly the same thing as -a. It's the long version of the option.
+
 -a /  
 #List all contents of the root directory, including hidden files.
+
 ls -l
 #List of files in detailed format (permissions, owner, size, and date)
+
 ls -l -ah
 #detailed list including hidden and legible sizes
+
 ls -lah
 #Same as the previous one, but with options combined into a single form
+
 mkdir -- -rf
 #mkdir -- -rf → creates a directory literally named -rf (the -- prevents it from being taken as an option)
+
 rm -- -r
 #In one line: try to delete a file named -rf, treating that name as an argument and not as options.
+
 rmdir -- -rf
 #Try deleting a directory called -rf but only works if it's empty
+
+ls --help
+#It shows quick help with options and usage of the ls command
+
+man ls
+#Open the complete and detailed ls manual in the terminal.
+# Basic navigation in the manual
+#   ↓ or j → go down one line
+#   ↑ or k → go up one line
+#   Space → go down one page
+#   b → go up one page
+#   g → go to the beginning of the document
+#   G → go to the end of the document
+#   Searching within the manual
+#   /text → search for a word
+#   n → next match
+#   N → previous match
+
+man git-clone
+#Open the git clone manual page (if it exists on your system) to view its documentation.
+/depth
+#Search for the word "depth" in the git clone manual and it will take you to the first match.
