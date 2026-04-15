@@ -24,3 +24,5 @@ touch /etc/prueba.txt
 mkdir ~/mi_carpeta
 #It doesn't use sudo (it's my personal folder)
 
+apt install cowsay
+#It usually uses sudo (to install software on the system)
