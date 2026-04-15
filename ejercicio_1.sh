@@ -21,3 +21,6 @@ ls /etc
 touch /etc/prueba.txt 
 #You might need sudo (if /etc doesn't let you write). In that case, you should change permissions with chmod or run it with sudo.
 
+mkdir ~/mi_carpeta
+#It doesn't use sudo (it's my personal folder)
+
