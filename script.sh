@@ -81,3 +81,6 @@ cat /etc/archivo_protegido
 #verify with cat
     #hola
     #chao
+
+sudo su -
+#It gives you root privileges with a complete login environment.
