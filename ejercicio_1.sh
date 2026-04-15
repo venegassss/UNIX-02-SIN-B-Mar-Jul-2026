@@ -14,3 +14,7 @@ cat hola.sh
 #To obtain permissions, we execute:
 chmod +x hola.sh
 #It gives execution permission to the file so that it can be run as a program (./hola.sh).
+
+ls /etc
+#It does not use sudo (only lists, does not modify anything
+
