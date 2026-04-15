@@ -68,8 +68,16 @@ sudo echo "hola" > /etc/archivo_protegido
 #(>) is done by your unprivileged shell, so it doesn't have permission to write to /etc.
 
 echo "hola" | sudo tee /etc/archivo_protegido > /dev/null
-#Write "hello" to /etc/protected_file with administrator permissions and 
+#Write "hello" to /etc/archivo protegido with administrator permissions and 
 #nothing is displayed on the screen (because it redirects to /dev/null).
 
 echo "hola" | sudo tee /etc/archivo_protegido 
-#Write "hello" in /etc/protected_file with administrator permissions and display it on the screen.
+#Write "hello" in /etc/archivo_protegido with administrator permissions and display it on the screen.
+
+sudo sh -c 'echo "chao" >> /etc/archivo_protegido'
+#Run the entire command as root: add (>>) "chao" to the file /etc/archivo_protegido.
+
+cat /etc/archivo_protegido
+#verify with cat
+    #hola
+    #chao
