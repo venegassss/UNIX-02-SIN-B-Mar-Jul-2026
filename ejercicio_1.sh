@@ -10,3 +10,7 @@ cat hola.sh
 ./hola.sh
 #Run the script (if you have execute permissions)
 #In our case we don't have permission, so it deploys bash: ./hola.sh: Permission denied
+
+#To obtain permissions, we execute:
+chmod +x hola.sh
+#It gives execution permission to the file so that it can be run as a program (./hola.sh).
