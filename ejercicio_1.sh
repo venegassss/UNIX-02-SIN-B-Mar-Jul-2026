@@ -6,3 +6,7 @@ echo 'echo "hola desde mi primer script"' >> hola.sh
 
 cat hola.sh
 #displays the script contents
+
+./hola.sh
+#Run the script (if you have execute permissions)
+#In our case we don't have permission, so it deploys bash: ./hola.sh: Permission denied
