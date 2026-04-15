@@ -18,3 +18,6 @@ chmod +x hola.sh
 ls /etc
 #It does not use sudo (only lists, does not modify anything
 
+touch /etc/prueba.txt 
+#You might need sudo (if /etc doesn't let you write). In that case, you should change permissions with chmod or run it with sudo.
+
