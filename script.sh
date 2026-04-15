@@ -84,3 +84,9 @@ cat /etc/archivo_protegido
 
 sudo su -
 #It gives you root privileges with a complete login environment.
+    #(exit) to exit sudo mode 
+
+echo "$HOME"
+#displays the value of the variable (your personal folder)
+echo '$HOME'
+#displays the literal text $HOME
