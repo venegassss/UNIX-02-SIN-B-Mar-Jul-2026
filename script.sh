@@ -90,3 +90,4 @@ echo "$HOME"
 #displays the value of the variable (your personal folder)
 echo '$HOME'
 #displays the literal text $HOME
+
