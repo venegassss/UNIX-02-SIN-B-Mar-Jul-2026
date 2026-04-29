@@ -89,7 +89,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     neovim \
     vim \
     zsh \
-    zsh-completion \
+    bash-completion \
     \
     # === Herramientas de 4ta generación ===
     # Estas son las protagonistas de las Unidades 2, 3 y 4:
@@ -220,18 +220,8 @@ RUN git config --system --add safe.directory '*' \
 # Prompt del curso para bash
 RUN cat >> /root/.zshrc <<'EOF'
 
-# ===== Prompt del curso =====
-__set_prompt() {
-    local ec=$?
-    local mark
-    if [ $ec -eq 0 ]; then
-        mark='\[\e[32m\]✓\[\e[0m\]'
-    else
-        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
-    fi
-    PS1="\[\e[36m\][Cristopher-Venegas]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
-}
-precmd() { __set_prompt }
+
+PROMPT='%F{cyan}[Cristopher-Venegas]%f %F{yellow}%1~%f %(?.%F{green}ok.%F{red}bad %?)%f %# '
 EOF
 CMD ["/bin/zsh"]
 
