@@ -174,3 +174,10 @@
 // Shows the first 10 lines of the `/etc/group` file, which contains system group information.
 //groups/groups $USER
 //`groups` shows the groups of the current user, and `groups $USER` shows the groups for a specific user.
+
+// id - u/ id -g/ id-G
+//`id -u` shows the user ID, `id -g` shows the primary group ID, and `id -G` shows all group IDs of the current user.
+
+//cat /etc/group | grep codespace
+//`cat /etc/group | grep codespace` shows all lines in `/etc/group` that contain the word “codespace”,
+// filtering and displaying only groups related to the Codespaces user or environment.
