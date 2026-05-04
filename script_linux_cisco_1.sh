@@ -50,3 +50,15 @@
 50 ls -l hello.sh         # Confirms ownership changes
 51 ./hello.sh             # Attempts execution under current permissions
 52 sudo ./hello.sh        # Executes the script with superuser privileges
+53 cat animals.txt        # Outputs the complete content of the file
+54 cat alpha.txt          # Displays file content
+55 head alpha.txt         # Shows the first 10 lines of the file
+56 tail alpha.txt         # Shows the last 10 lines of the file
+57 head -n 5 alpha.txt    # Displays the first 5 lines of the file
+58 tail -n 5 alpha.txt    # Displays the last 5 lines of the file
+59 cp /etc/passwd         # Invalid command due to missing destination argument
+60 cp /etc/passwd .       # Copies the file into the current directory
+61 ls                     # Lists files in the directory
+62 cd ~                   # Navigates back to the home directory
+63 dd if=/dev/zero of=/tmp/swapex bs=1M count=50 # Creates a 50MB file filled with zero values
+64 history                # Displays the history of executed commands
