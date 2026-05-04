@@ -17,3 +17,21 @@
 17 aptitude -vvvvvvvv moo # Extended verbosity level
 18 aptitude -vvvvvvvvv moo # Maximum verbosity escalation (demonstrative purpose)
 19 aptitude -vvvvvvvvvvvvvvvvvvvvvvvvvvv moo # Excessive verbosity used for demonstration so funny
+20 pwd                    # Outputs the absolute path of the current working directory
+21 cd Documents           # Changes the working directory to "Documents"
+22 cd /                   # Navigates to the root directory of the file system
+23 cd /home/sysadmin      # Accesses a specific user directory via absolute path
+24 pwd}                   # Invalid command due to syntax error
+25 pwd                    # Prints the current directory path
+26 cd School/Art          # Navigates to a nested directory structure
+27 cd Documents           # Returns to the "Documents" directory
+28 cd School/Art          # Re-enters the specified subdirectory
+29 pwd                    # Displays current directory location
+30 cd ..                  # Moves one level up in the directory hierarchy
+31 cd ~                   # Returns to the user's home directory
+32 ls                     # Lists directory contents
+33 ls -l /var/log/        # Displays detailed contents of the /var/log directory
+34 ls -lt /var/log        # Sorts files by modification time (most recent first)
+35 ls -l -S /var/log      # Sorts files by size in descending order
+36 ls -lSr /var/log       # Sorts files by size in ascending order
+37 ls -r /var/log         # Displays contents in reverse order
