@@ -181,3 +181,11 @@
 //cat /etc/group | grep codespace
 //`cat /etc/group | grep codespace` shows all lines in `/etc/group` that contain the word “codespace”,
 // filtering and displaying only groups related to the Codespaces user or environment.
+
+//mkdir ~/proyecto_unix/
+//ls -la ~/proyecto_unix/
+//total 8
+//drwxr-xr-x 2 root root 4096 may  4 13:36 .
+//drwx------ 1 root root 4096 may  4 13:36 ..
+//It shows that the directory ~/proyecto_unix/ was created and, when listing its contents (ls -la), it is empty,
+//containing only . (current directory) and .. (parent directory), with root as the owner.
