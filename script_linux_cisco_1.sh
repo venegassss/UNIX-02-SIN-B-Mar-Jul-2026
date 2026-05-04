@@ -35,3 +35,18 @@
 35 ls -l -S /var/log      # Sorts files by size in descending order
 36 ls -lSr /var/log       # Sorts files by size in ascending order
 37 ls -r /var/log         # Displays contents in reverse order
+38 su -                   # Switches to the root user with a login shell environment
+39 sl                     # Executes a fun program that displays a steam locomotive animation
+40 su -                   # Reattempts switching to root user
+41 sudo sl                # Executes the command with elevated privileges using sudo
+42 cd ~/Documents         # Navigates to the Documents folder within the home directory
+43 ls -l hello.sh         # Displays detailed information about the script file
+44 ./hello.sh             # Attempts to execute the script in the current directory
+45 chmod u+x hello.sh     # Grants execute permission to the file owner
+46 ls -l hello.sh         # Verifies updated file permissions
+47 ./hello.sh             # Executes the script after permission modification
+48 ls -l                  # Lists files with detailed attributes
+49 sudo chown root hello.sh # Changes file ownership to the root user
+50 ls -l hello.sh         # Confirms ownership changes
+51 ./hello.sh             # Attempts execution under current permissions
+52 sudo ./hello.sh        # Executes the script with superuser privileges
