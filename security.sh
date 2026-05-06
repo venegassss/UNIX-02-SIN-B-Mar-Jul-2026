@@ -51,3 +51,18 @@ id root #He lost all the other groups
 #restore
 sudo usermod -aG diseno,marketing root
 id root #restored~
+
+#lab_chgrp
+mkdir -p ~/lab_chgrp/{proyectos,reportes,scripts}
+touch ~/lab_chgrp/proyectos/app.py
+touch ~/lab_chgrp/proyectos/config.json
+touch ~/lab_chgrp/reportes/informe.txt
+touch ~/lab_chgrp/scripts/deploy.sh
+#verify
+ls -la ~/lab_chgrp/proyectos/
+ls -la ~/lab_chgrp/reportes/
+#change file group
+sudo chgrp desarrolladores ~/lab_chgrp/proyectos/app.p
+#change group a lot files
+sudo chgrp diseno ~/lab_chgrp/proyectos/config.json ~/lab_chgrp/reportes/informe.txt
+ls -la ~/lab_chgrp/proyectos -la ~/lab_chgrp/reportes/
