@@ -47,3 +47,7 @@ grep root /etc/group
 sudo usermod -G desarrolladores root
 # this delete all secondary groups except desarrrolladores
 id root #He lost all the other groups
+
+#restore
+sudo usermod -aG diseno,marketing root
+id root #restored
