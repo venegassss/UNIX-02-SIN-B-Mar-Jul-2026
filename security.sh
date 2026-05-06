@@ -15,7 +15,7 @@ groupadd --help
 #View the range of GIDs in the system
 grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
 
-#ubuntu
+#in ubuntu
 SYS_MIN = 100
 SYS_MAX = 999
 GID_MIN = 1000
@@ -42,3 +42,8 @@ sudo adduser root marketing
 #see state
 id root
 grep root /etc/group
+
+#now the error
+sudo usermod -G desarrolladores root
+# this delete all secondary groups except desarrrolladores
+id root #He lost all the other groups
