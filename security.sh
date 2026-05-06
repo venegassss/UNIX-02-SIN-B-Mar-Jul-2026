@@ -50,4 +50,4 @@ id root #He lost all the other groups
 
 #restore
 sudo usermod -aG diseno,marketing root
-id root #restored
+id root #restored~
