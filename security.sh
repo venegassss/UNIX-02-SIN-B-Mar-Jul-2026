@@ -27,3 +27,10 @@ sudo addgroup --gid 2100 marketing
 sudo addgroup --system cache_web
 #verify
 grep "diseno\|marketing\|cache_web" /etc/group
+
+#see groups
+groups
+id
+#add user with usermod
+sudo usermod -aG desarrolladores root
+sudo usermod -aG diseno root
