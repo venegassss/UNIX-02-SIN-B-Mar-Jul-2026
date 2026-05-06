@@ -20,3 +20,10 @@ SYS_MIN = 100
 SYS_MAX = 999
 GID_MIN = 1000
 GID_MAX = 60000
+
+#create groups with addgroups
+sudo addgroup diseno
+sudo addgroup --gid 2100 marketing
+sudo addgroup --system cache_web
+#verify
+grep "diseno\|marketing\|cache_web" /etc/group
