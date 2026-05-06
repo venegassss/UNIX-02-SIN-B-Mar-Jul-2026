@@ -66,3 +66,9 @@ sudo chgrp desarrolladores ~/lab_chgrp/proyectos/app.p
 #change group a lot files
 sudo chgrp diseno ~/lab_chgrp/proyectos/config.json ~/lab_chgrp/reportes/informe.txt
 ls -la ~/lab_chgrp/proyectos -la ~/lab_chgrp/reportes/
+
+#change an entire directory
+sudo chgrp -R desarrolladores ~/lab_chgrp/scripts/
+ls -laR chgrp ~/lab_chgrp/scripts/
+#verbose to see changes
+sudo chgrp -Rv diseno ~/lab_chgrp/reportes/
