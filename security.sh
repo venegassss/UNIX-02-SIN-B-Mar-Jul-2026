@@ -34,3 +34,11 @@ id
 #add user with usermod
 sudo usermod -aG desarrolladores root
 sudo usermod -aG diseno root
+
+#verify changes in /etc/groups
+grep "diseno\|desarrolladores" /etc/group
+#add user with adduser
+sudo adduser root marketing
+#see state
+id root
+grep root /etc/group
