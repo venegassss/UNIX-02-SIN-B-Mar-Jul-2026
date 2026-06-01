@@ -11,3 +11,8 @@ echo ${OSTYPE}
 ps -e -f 
 ps -ef
 df --human-readable
+
+./blackhatbash1.sh
+#Runs the script directly using the interpreter specified in the shebang (#!/bin/bash).
+bash -r blackhatbash1.sh
+#Runs the script in Bash restricted mode, which limits certain commands and operations.
