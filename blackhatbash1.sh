@@ -1,7 +1,8 @@
 #!/bin/bash
-#!/bin/bash -x
-#tells the system to run the script using Bash and enables debug mode 
-#(-x), which prints each command and its arguments as they are executed.
+set -x
+#(#!/bin/bash -x)
+#(tells the system to run the script using Bash and enables debug mode 
+#(-x), which prints each command and its arguments as they are executed.)
 bash --version
 env
 echo ${SHELL}
@@ -12,7 +13,12 @@ ps -e -f
 ps -ef
 df --human-readable
 
-./blackhatbash1.sh
+#./blackhatbash1.sh
 #Runs the script directly using the interpreter specified in the shebang (#!/bin/bash).
-bash -r blackhatbash1.sh
+#bash -r blackhatbash1.sh
 #Runs the script in Bash restricted mode, which limits certain commands and operations.
+#bash -n blackhatbash1.sh
+#checks the script for syntax errors without executing it.
+#bash -x blackhatbash1.sh
+#runs the script in debug mode, printing each command and its arguments before executing them.
+set +x
