@@ -19,4 +19,8 @@ root_directory=$(ls -ld /)
 echo "${root_directory}"
 #prints that stored information
 
+unset book
+#removes the variable book from the current shell session, deleting its value so it no longer exists.
+
+
 set +x
