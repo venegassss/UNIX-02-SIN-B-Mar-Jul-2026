@@ -20,3 +20,11 @@ if [[ "$is_root" -eq "0" ]]; then  #Tests whether the variable is_root is numeri
   else
       echo "user is not root!"  #Otherwise, prints that the user is not root.
   fi  
+
+  # sudo useradd pepebotellas
+  # sudo passwd pepebotellas
+  # su - pepebotellas
+  #
+  #
+  #
+  #
