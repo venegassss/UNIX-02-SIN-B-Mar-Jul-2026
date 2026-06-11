@@ -121,6 +121,35 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 # El "&&" encadena comandos: ejecuta el siguiente SOLO SI el anterior
 # terminó bien. Si algo falla, el build se detiene con error (que es lo
 # que queremos: mejor un error claro que una imagen rota).
+
+# This RUN instruction installs all software required for the course.
+# apt-get update downloads the latest package lists from configured
+# repositories, while apt-get install downloads and installs the
+# selected packages.
+# The -y option automatically answers "yes" to installation prompts.
+# --no-install-recommends installs only required dependencies and avoids
+# optional packages that would increase image size.
+# Everything is installed in a single RUN instruction because each RUN
+# creates a new Docker layer. Fewer layers generally mean a smaller and
+# more efficient image.
+# The && operator executes the next command only if the previous one
+# completed successfully.
+# Examples of installed tools:
+# - grep: searches for text patterns in files and command output.
+# - sed: performs text editing and substitutions from the command line.
+# - gawk: processes structured text and extracts data from files.
+# - shellcheck: analyzes shell scripts and reports common mistakes.
+# - nmap: scans hosts and network services.
+# - tcpdump: captures and analyzes network traffic.
+# - tshark: command-line version of Wireshark.
+# - tor: routes traffic through the Tor network.
+# - proxychains4: forces applications to use proxy servers.
+# - jq: parses and manipulates JSON data.
+# - man-db: provides access to manual pages.
+#
+# (Black Hat Bash Ch.1: commands, pipes and shell environment.
+# Black Hat Bash Ch.2: text-processing tools such as grep, sed and awk.
+# Black Hat Bash Ch.3: building lab environments with containers.)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
     # === Editores de texto y shells (intérpretes de comandos) ===
@@ -212,12 +241,27 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
+
+ # sed edits the locale configuration file in place.
+# It removes the comment character (#) from the Spanish UTF-8 locale,
+# enabling it for the system.
+#
+# locale-gen generates the locale data so applications can use Spanish
+# language settings and UTF-8 character encoding.
+
  # --- Limpieza final: reducir el tamaño de la imagen ---
  # apt deja archivos de caché que ya no necesitamos después de instalar.
  # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
  # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+ # apt-get clean removes cached package files that are no longer needed.
+#
+# rm -rf /var/lib/apt/lists/* removes downloaded package indexes.
+#
+# Performing cleanup in the same RUN instruction prevents unnecessary
+# files from remaining in previous image layers and reduces image size.
 
 
 # ----------------------------------------------------------------------------
