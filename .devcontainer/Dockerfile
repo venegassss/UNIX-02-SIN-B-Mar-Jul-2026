@@ -62,6 +62,18 @@ FROM kalilinux/kali-rolling:latest
 #
 # La barra invertida "\" al final de cada línea significa "esto continúa
 # en la línea siguiente". Solo es para legibilidad.
+
+# Environment variables define settings available to programs running
+# inside the container.
+# DEBIAN_FRONTEND=noninteractive prevents package installers from asking
+# interactive questions during the build process.
+# LANG and LC_ALL configure the default language and character encoding.
+# UTF-8 support is required for accented characters and international text.
+# TERM=xterm-256color tells terminal applications that 256-color output
+# is supported.
+# Environment variables are an important part of shell behavior because
+# commands can read them during execution.
+# (Black Hat Bash Ch.1: environment variables influence command behavior.)
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
