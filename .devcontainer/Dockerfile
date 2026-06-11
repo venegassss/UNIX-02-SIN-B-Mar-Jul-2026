@@ -270,6 +270,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Por defecto Docker usa /bin/sh (un shell más limitado y antiguo). Lo
 # cambiamos a bash por si agregamos más instrucciones con sintaxis
 # moderna (arrays, [[ ]], etc.).
+
+# This instruction changes the default shell used by future RUN commands.
+# Docker normally uses /bin/sh, but zsh provides additional features and
+# a more user-friendly shell environment.
+# Using a specific shell ensures that shell commands behave consistently
+# during image construction.
+# (Black Hat Bash Ch.1: the shell interprets and executes commands.)
 SHELL ["/bin/zsh", "-c"]
 
 
@@ -279,6 +286,12 @@ SHELL ["/bin/zsh", "-c"]
 # Codespaces siempre monta el código del repositorio en
 # /workspaces/<nombre-del-repo>. Establecer /workspaces aquí hace que las
 # terminales se abran cerca de nuestros archivos del curso.
+
+# WORKDIR sets the default working directory for subsequent instructions.
+# Any command executed after this point starts from this location unless
+# another directory is specified.
+# This makes it easier to work with project files because the terminal
+# opens in a predictable location.
 WORKDIR /workspaces
 
 # Configuración de Git para el contenedor:
@@ -288,6 +301,17 @@ WORKDIR /workspaces
 # - pull.rebase false: merge por defecto al hacer pull (más intuitivo)
 # - git lfs install --system: registra los hooks de LFS globalmente para
 #   que, si un repo los necesita, funcionen sin sorpresas.
+
+# This block configures Git for all users inside the container.
+
+# safe.directory '*' prevents Git security warnings when repositories
+# are mounted from external locations such as Codespaces.
+# init.defaultBranch main sets "main" as the default branch name when
+# creating new repositories.
+# pull.rebase false makes Git use merge behavior during git pull instead
+# of rebasing changes.
+# git lfs install --system enables Git Large File Storage support so
+# repositories using large files work correctly inside the container.
 RUN git config --system --add safe.directory '*' \
  && git config --system init.defaultBranch main \
  && git config --system pull.rebase false \
@@ -300,11 +324,31 @@ RUN git config --system --add safe.directory '*' \
 # propia terminal integrada de VS Code, pero es buena práctica dejarla
 # definida para que la imagen sea usable también con Docker puro.
 # Prompt del curso para bash
+
+# This block uses a here-document (heredoc) to append multiple lines
+# to the .zshrc configuration file.
+
+# A heredoc allows text to be redirected into a file until the EOF
+# marker is reached.
+# The PROMPT variable customizes the appearance of the zsh prompt.
+# It configures colors, displays the current directory, and shows the
+# exit status of the previous command.
+
+# (Black Hat Bash Ch.1: redirection sends text into files and commands.)
 RUN cat >> /root/.zshrc <<'EOF'
 
 
 PROMPT='%F{cyan}[Cristopher-Venegas]%f %F{yellow}%1~%f %(?.%F{green}ok.%F{red}bad %?)%f %# '
 EOF
+
+# CMD defines the default command executed when a container starts.
+
+# Unlike RUN, which executes during image creation, CMD executes when
+# the container is launched.
+# This starts an interactive zsh session by default, giving the user a
+# ready-to-use command-line environment.
+# (Black Hat Bash Ch.3: RUN builds the image, CMD runs at container
+# startup.)
 CMD ["/bin/zsh"]
 
 
