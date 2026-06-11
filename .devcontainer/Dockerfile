@@ -87,6 +87,18 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # normales (no-root) deben poder capturar paquetes. Como en el contenedor
 # siempre somos root, respondemos "false" POR ADELANTADO usando
 # debconf-set-selections para que no detenga el build esperando input.
+
+# This command preloads an answer into Debian's package configuration
+# database before installing tshark.
+#
+# The pipe (|) sends the output of echo directly into
+# debconf-set-selections.
+#
+# This avoids interactive prompts during the build and allows the image
+# to be created automatically.
+#
+# (Black Hat Bash Ch.1: pipes connect the output of one command to the
+# input of another command.)
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
 
