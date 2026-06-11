@@ -6,7 +6,14 @@
 #  "imagen". Una imagen es como un molde congelado de un sistema Linux
 #  listo para usar; cada vez que abres el Codespace, se crea un
 #  "contenedor" a partir de ese molde.
-#
+
+# Every Docker instruction creates a new image layer.
+# Docker can reuse unchanged layers from its cache, which makes future
+# builds much faster.
+# For that reason, instruction order matters: changing an early layer
+# forces Docker to rebuild everything that comes after it.
+# (Black Hat Bash Ch.3: Docker images are composed of multiple layers.)
+
 #  Analogía: la imagen es el PLANO, el contenedor es la CASA construida
 #  con ese plano. Puedes construir muchas casas iguales a partir de un
 #  solo plano, y si destruyes una casa el plano sigue intacto.
@@ -23,6 +30,13 @@
 # En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
 # en su versión "rolling" (actualización continua, siempre al día).
 # Todo lo que instalemos más abajo se apila ENCIMA de esta base.
+
+# Base image used for the entire container.
+# Docker starts building from this image instead of creating a Linux
+# system from scratch.
+# Kali Linux is commonly used for cybersecurity and networking labs,
+# so it already includes many tools and repositories useful for the course.
+# (Black Hat Bash Ch.3: containers are built from reusable images.)
 FROM kalilinux/kali-rolling:latest
 
 
