@@ -7,6 +7,6 @@ done
 #./for_ip.sh 10.0.0.1 10.0.0.2 192.168.1.1 192.168.1.2
 
 
-for file in $(ls .); do
+for file in $(/.*); do
     echo "File: ${file}"
 done
