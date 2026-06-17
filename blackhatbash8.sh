@@ -30,3 +30,7 @@ cat newlogd.txt
 sed '$d' log.txt
 sed '$d' log.txt > newlogl.txt
 cat newlogd.txt
+
+sed '5,7d' newlog.txt > newlog57.txt
+cat newlog57.txt
+
