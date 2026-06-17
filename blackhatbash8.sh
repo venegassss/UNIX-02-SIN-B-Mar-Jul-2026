@@ -45,3 +45,6 @@ fg %1 # Bring job 1 to the foreground
 bg %1 # Resume job 1 in the background
 kill -9 <1>   # Forcefully terminate the process with the specified PID (1)
 
+nohup ./blackhatbash8.sh & # Run the script in the background and keep it running after logout
+
+sleep 500 &
