@@ -36,3 +36,12 @@ cat newlog57.txt
 
 sed -n '2,15 p' log.txt
 sed -i '1d' log.txt
+
+sleep 100 & #Run sleep in the background for 100 seconds
+ps -ef | grep sleep # Show running processes and filter for "sleep"
+jobs #List current background jobs
+
+fg %1 # Bring job 1 to the foreground
+bg %1 # Resume job 1 in the background
+kill -9 <1>   # Forcefully terminate the process with the specified PID (1)
+
