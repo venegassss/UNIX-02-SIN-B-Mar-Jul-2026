@@ -22,3 +22,7 @@ grep "Godzilla" newlog.txt
 sed 's/ //g' log.txt
 sed 's/ //g' log.txt > newlog1.txt
 cat newlog1.txt
+
+sed '1d' log.txt
+sed '1d' log.txt > newlogd.txt
+cat newlogd.txt
