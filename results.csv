@@ -1,0 +1,7 @@
+Ping result for google.com: Failure
+ 13:49:24
+PING google.com (192.178.155.138) 56(84) bytes of data.
+
+--- google.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
